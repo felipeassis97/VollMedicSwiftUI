@@ -11,8 +11,34 @@ struct WebService {
     
     private let baseURL = "http://localhost:3000"
     
+   
+    
+    
+    func reescheduleAppointment(appointmentID: String, newDate: String) async throws -> ScheduleAppointmentResponse? {
+        let endpoint = baseURL + "/consulta/" + appointmentID
+        guard let url = URL(string: endpoint) else { return nil }
+        
+        do {
+            
+            let requestData: [String: Any] = ["data" : newDate]
+            let jsonBody = try JSONSerialization.data(withJSONObject: requestData)
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "PATCH"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = jsonBody
+            
+            let (data, _) =  try await URLSession.shared.data(for: request)
+            let appointments = try JSONDecoder().decode(ScheduleAppointmentResponse.self, from: data)
+            return appointments
+        } catch {
+            return nil
+        }
+    }
+    
+    
     func getAllApointmentsFromPatient(patientID: String) async throws -> [Appointment]? {
-        let endpoint = baseURL + "/paciente/" + patientID + "/consultas" 
+        let endpoint = baseURL + "/paciente/" + patientID + "/consultas"
         guard let url = URL(string: endpoint) else { return nil }
         
         do {

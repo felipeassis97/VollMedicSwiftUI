@@ -44,6 +44,21 @@ struct ScheduleAppointmentView: View {
     }
     
     func reScheduleAppointment() async {
+        guard let appointmentID else { return }
+        
+        do {
+            if let _ =  try await service.reescheduleAppointment(appointmentID: appointmentID, newDate: selectDate.toString()) {
+                isAppointmentSchedule = true
+            }
+            else {
+                isAppointmentSchedule = false
+            }
+        } catch {
+            print("Ocorreu um erro! \(error)")
+            isAppointmentSchedule = false
+        }
+        
+        showAlert = true
         
     }
     
