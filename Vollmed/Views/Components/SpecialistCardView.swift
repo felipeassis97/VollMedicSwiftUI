@@ -10,10 +10,12 @@ import UIKit
 
 struct SpecialistCardView: View {
     
+    var appointment: Appointment?
     var specialist: Specialist
     let service = WebService()
     
     @State private var profileImage: UIImage?
+
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -32,10 +34,36 @@ struct SpecialistCardView: View {
                         .font(.title3)
                         .bold()
                     Text(specialist.specialty)
+                    
+                    if let appointment {
+                        Text(appointment.date.dateToFormatString())
+                    }
                 }
             }
             
-            ButtonView(text: "Agendar consulta")
+            if let appointment {
+                HStack {
+                    
+                    NavigationLink {
+                        ScheduleAppointmentView(specialistID: specialist.id, isRescheduleView: true, appointmentID: appointment.id)
+                    } label: {
+                        ButtonView(text: "Reagendar")
+                    }
+
+                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                        ButtonView(text: "Cancelar", buttonType: .cancel)
+                    })
+
+                }
+            } else {
+                NavigationLink {
+                    ScheduleAppointmentView(specialistID: specialist.id)
+                } label: {
+                    ButtonView(text: "Agendar consulta")
+                }
+            }
+    
+ 
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
