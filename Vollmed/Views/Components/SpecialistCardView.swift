@@ -49,11 +49,13 @@ struct SpecialistCardView: View {
                     } label: {
                         ButtonView(text: "Reagendar")
                     }
-
-                    Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                    
+                    NavigationLink {
+                        CancelApointmentView(appointmentID: appointment.id)
+                    } label: {
                         ButtonView(text: "Cancelar", buttonType: .cancel)
-                    })
 
+                    }
                 }
             } else {
                 NavigationLink {

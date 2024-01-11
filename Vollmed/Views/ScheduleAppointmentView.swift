@@ -19,7 +19,8 @@ struct ScheduleAppointmentView: View {
     @State private var selectDate = Date()
     @State private var showAlert = false
     @State private var isAppointmentSchedule = false
-    
+    @Environment(\.dismiss) var navigationPop
+
     init(specialistID: String, isRescheduleView: Bool = false, appointmentID: String? = nil) {
         self.specialistID = specialistID
         self.isRescheduleView = isRescheduleView
@@ -91,7 +92,13 @@ struct ScheduleAppointmentView: View {
         .alert(isAppointmentSchedule ? "Sucesso" : "Ops, algo deu errado!",
                isPresented: $showAlert,
                presenting: isAppointmentSchedule) { _ in
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                if isAppointmentSchedule {
+                    navigationPop()
+
+                }
+                
+            }, label: {
                 Text("OK")
             })
         } message: { isScheduled in

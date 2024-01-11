@@ -23,6 +23,7 @@
 		9E81C8C22B4EAF1E0035CE89 /* MyAppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E81C8C12B4EAF1E0035CE89 /* MyAppointmentsView.swift */; };
 		9E81C8C42B4EB1EB0035CE89 /* Appointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E81C8C32B4EB1EB0035CE89 /* Appointment.swift */; };
 		9E81C8C62B4EB2650035CE89 /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E81C8C52B4EB2650035CE89 /* Patient.swift */; };
+		9EEED24A2B500C0F00BFF60C /* CancelApointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED2492B500C0F00BFF60C /* CancelApointmentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		9E81C8C12B4EAF1E0035CE89 /* MyAppointmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppointmentsView.swift; sourceTree = "<group>"; };
 		9E81C8C32B4EB1EB0035CE89 /* Appointment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appointment.swift; sourceTree = "<group>"; };
 		9E81C8C52B4EB2650035CE89 /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		9EEED2492B500C0F00BFF60C /* CancelApointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelApointmentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				484BEF042AB0F7970033C07A /* HomeView.swift */,
 				9E13DC012B4D86E800A6C324 /* ScheduleAppointmentView.swift */,
 				9E81C8C12B4EAF1E0035CE89 /* MyAppointmentsView.swift */,
+				9EEED2492B500C0F00BFF60C /* CancelApointmentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EEED24A2B500C0F00BFF60C /* CancelApointmentView.swift in Sources */,
 				9E81C8C42B4EB1EB0035CE89 /* Appointment.swift in Sources */,
 				9E13DC052B4D90C400A6C324 /* Date+.swift in Sources */,
 				9E81C8C02B4EA6A40035CE89 /* ScheduleAppointment.swift in Sources */,

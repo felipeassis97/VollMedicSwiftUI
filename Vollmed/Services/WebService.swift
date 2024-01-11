@@ -11,6 +11,30 @@ struct WebService {
     
     private let baseURL = "http://localhost:3000"
     
+    func cancelAppointment(appointmentID: String, 
+                           reasonToCancel: String) async throws -> Void {
+        let endpoint = baseURL + "/consulta/" + appointmentID
+        guard let url = URL(string: endpoint) else { return }
+        
+        do {
+            let requestData: [String: Any] = ["motivo_cancelamento" : reasonToCancel]
+            let jsonBody = try JSONSerialization.data(withJSONObject: requestData)
+            
+            var request = URLRequest(url: url)
+            request.httpMethod = "DELETE"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = jsonBody
+            
+            let (_, response) =  try await URLSession.shared.data(for: request)
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
+                return
+            }
+            
+        } catch {
+            print("Error when delete appointment: \(error)")
+        }
+    }
+    
    
     
     
@@ -32,6 +56,7 @@ struct WebService {
             let appointments = try JSONDecoder().decode(ScheduleAppointmentResponse.self, from: data)
             return appointments
         } catch {
+            print("Error when reeschedule appointment: \(error)")
             return nil
         }
     }
@@ -46,6 +71,7 @@ struct WebService {
             let schedules = try JSONDecoder().decode([Appointment].self, from: data)
             return schedules
         } catch {
+            print("Error when get appointment by user: \(error)")
             return nil
         }
     }
@@ -70,6 +96,7 @@ struct WebService {
             let appointments = try JSONDecoder().decode(ScheduleAppointmentResponse.self, from: data)
             return appointments
         } catch {
+            print("Error when schedule appointment: \(error)")
             return nil
         }
     }
@@ -94,6 +121,7 @@ struct WebService {
             return image
         }
         catch {
+            print("Error when download image: \(error)")
             return UIImage(named: "Logo") ?? nil
         }
     }
@@ -106,6 +134,7 @@ struct WebService {
             let specialists = try JSONDecoder().decode([Specialist].self, from: data)
             return specialists
         } catch {
+            print("Error when get all specialists: \(error)")
             return nil
         }
     }
