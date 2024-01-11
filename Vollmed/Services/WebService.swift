@@ -10,8 +10,29 @@ import UIKit
 struct WebService {
     
     private let baseURL = "http://localhost:3000"
+
+    func registerPatient(patient: Patient) async throws -> Bool {
+        let endpoint = baseURL + "/paciente"
+        guard let url = URL(string: endpoint) else { return false }
+        
+        do {
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.httpBody = try JSONEncoder().encode(patient)
+            
+            let (_, response) =  try await URLSession.shared.data(for: request)
+            if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 202 {
+                return true
+            }
+            return false
+        } catch {
+            print("Error when register patient: \(error)")
+            return false
+        }
+    }
     
-    func cancelAppointment(appointmentID: String, 
+    func cancelAppointment(appointmentID: String,
                            reasonToCancel: String) async throws -> Void {
         let endpoint = baseURL + "/consulta/" + appointmentID
         guard let url = URL(string: endpoint) else { return }
@@ -34,9 +55,6 @@ struct WebService {
             print("Error when delete appointment: \(error)")
         }
     }
-    
-   
-    
     
     func reescheduleAppointment(appointmentID: String, newDate: String) async throws -> ScheduleAppointmentResponse? {
         let endpoint = baseURL + "/consulta/" + appointmentID

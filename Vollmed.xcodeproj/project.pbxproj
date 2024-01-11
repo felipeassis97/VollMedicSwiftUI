@@ -18,6 +18,7 @@
 		48539DF42AB0F47D005BD7C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48539DF32AB0F47D005BD7C9 /* Preview Assets.xcassets */; };
 		9E13DC022B4D86E800A6C324 /* ScheduleAppointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E13DC012B4D86E800A6C324 /* ScheduleAppointmentView.swift */; };
 		9E13DC052B4D90C400A6C324 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E13DC042B4D90C400A6C324 /* Date+.swift */; };
+		9E3FAE032B5072200034AB68 /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9E3FAE022B5072200034AB68 /* SimpleToast */; };
 		9E81C8BE2B4EA45A0035CE89 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E81C8BD2B4EA45A0035CE89 /* String+.swift */; };
 		9E81C8C02B4EA6A40035CE89 /* ScheduleAppointment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E81C8BF2B4EA6A40035CE89 /* ScheduleAppointment.swift */; };
 		9E81C8C22B4EAF1E0035CE89 /* MyAppointmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E81C8C12B4EAF1E0035CE89 /* MyAppointmentsView.swift */; };
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E3FAE032B5072200034AB68 /* SimpleToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +170,9 @@
 			dependencies = (
 			);
 			name = Vollmed;
+			packageProductDependencies = (
+				9E3FAE022B5072200034AB68 /* SimpleToast */,
+			);
 			productName = Vollmed;
 			productReference = 48539DE92AB0F47C005BD7C9 /* Vollmed.app */;
 			productType = "com.apple.product-type.application";
@@ -196,6 +201,9 @@
 				Base,
 			);
 			mainGroup = 48539DE02AB0F47C005BD7C9;
+			packageReferences = (
+				9E3FAE012B5072200034AB68 /* XCRemoteSwiftPackageReference "SimpleToast" */,
+			);
 			productRefGroup = 48539DEA2AB0F47C005BD7C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -442,6 +450,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9E3FAE012B5072200034AB68 /* XCRemoteSwiftPackageReference "SimpleToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sanzaru/SimpleToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9E3FAE022B5072200034AB68 /* SimpleToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9E3FAE012B5072200034AB68 /* XCRemoteSwiftPackageReference "SimpleToast" */;
+			productName = SimpleToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 48539DE12AB0F47C005BD7C9 /* Project object */;
 }
