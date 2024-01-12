@@ -7,9 +7,6 @@
 
 import Foundation
 
-//MARK: Temp
-let patientID: String = "902605b4-6f3a-4950-b841-f77b0a7db6bc"
-
 struct ScheduleAppointmentRequest: Codable {
     let specialistID: String
     let patientID: String

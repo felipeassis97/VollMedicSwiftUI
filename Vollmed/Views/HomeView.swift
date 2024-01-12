@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     let service = WebService()
+    let authManager = AuthManager.instance
     @State private var specialistsD: [Specialist] = []
     
     var body: some View {
@@ -46,6 +47,31 @@ struct HomeView: View {
                 } catch {
                     print("Error: \(error)")
                 }
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    Task {
+                        do {
+                            let logout = try await service.logoutPatient()
+                            if logout {
+                                authManager.removeToken()
+                                authManager.removePatientID()
+                            }
+                            
+                        } catch {
+                            print("falha no logout")
+                        }
+                    }
+                }, label: {
+                    HStack {
+                        Image(systemName: "rectangle.portrait.and.arrow.forward")
+                            .foregroundStyle(.accent)
+                        Text("Logout")
+                            .foregroundStyle(.accent)
+                    }
+                })
             }
         }
     }

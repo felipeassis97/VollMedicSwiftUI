@@ -15,6 +15,8 @@ struct ScheduleAppointmentView: View {
     let appointmentID: String?
     
     let service = WebService()
+    let authManager = AuthManager.instance
+
     
     @State private var selectDate = Date()
     @State private var showAlert = false
@@ -29,7 +31,7 @@ struct ScheduleAppointmentView: View {
     
     func scheduleAppointment() async {
         do {
-            
+            guard let patientID = authManager.patientID else { return }
             if let appointment = try await service.scheduleAppointment(specialistID: specialistID, patientID: patientID, date: selectDate.toString()) {
                 print(appointment)
                 isAppointmentSchedule = true

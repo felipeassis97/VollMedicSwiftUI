@@ -8,28 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+    //MARK: Monitora se existe a variavel no storage (funciona como uma stream)
+    //@AppStorage(AppKeys.userToken) var token: String = ""
+    
+    //MARK: Irá reagir as mudancas das variaveis @Published
+    @ObservedObject var authManager = AuthManager.instance
+    
     var body: some View {
-        TabView {
+        if authManager.token == nil {
             NavigationStack {
-                HomeView()
+                SigninView()
             }
-            .tabItem {
-                Label(title: {
-                    Text("Home")
-                },
-                      icon: { Image(systemName: "house") }
-                )}
-            
-            NavigationStack {
-                MyAppointmentsView()
-            }
-            .tabItem {
-                Label(title: {
-                    Text("Minhas consultas")
-                }, icon: {
-                    Image(systemName: "calendar")
+        } else {
+            TabView {
+                NavigationStack {
+                    HomeView()
                 }
-                )}
+                .tabItem {
+                    Label(title: {
+                        Text("Home")
+                    },
+                          icon: { Image(systemName: "house") }
+                    )}
+                
+                NavigationStack {
+                    MyAppointmentsView()
+                }
+                .tabItem {
+                    Label(title: {
+                        Text("Minhas consultas")
+                    }, icon: {
+                        Image(systemName: "calendar")
+                    }
+                    )}
+            }
         }
     }
 }

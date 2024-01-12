@@ -19,6 +19,8 @@ struct SignupView: View {
     @State private var healthPlan: String
     @State var showAlert: Bool = false
     @State var isSuccess: Bool = false
+    @State var navigatoToSigninView: Bool = false
+    
     
     let healthPlans: [String] = ["Amil", "Unimed", "Bradesco Saúde", "SulAmérica", "Hapvida", "Notredame Intermédica", "Outro"]
     let service = WebService()
@@ -63,6 +65,8 @@ struct SignupView: View {
                             
                             if response {
                                 isSuccess = true
+                                print("Successo ao cadastrar paciente")
+                                
                             } else {
                                 print("Erro ao cadastrar paciente else")
                                 isSuccess = false
@@ -92,17 +96,23 @@ struct SignupView: View {
         }
         .navigationBarBackButtonHidden()
         .safeAreaPadding()
-        .simpleToast(isPresented: $showAlert, options: SimpleToastOptions(
-            hideAfter: 5
-        )) {
-            Label(isSuccess ? "Cadastro efetuado com sucesso!" : "Ocorreu um erro ao efetuar seu cadastro. por favor, tente novamente!",
-                  systemImage: isSuccess ? "person.badge.shield.checkmark.fill" : "exclamationmark.triangle"  )
-                .padding()
-                .background(isSuccess ? Color.green.opacity(0.8) : Color.red.opacity(0.8))
-                .foregroundColor(Color.white)
-                .cornerRadius(16)
-                .padding()
+        .navigationDestination(isPresented: $navigatoToSigninView) {
+            SigninView()
         }
+        .simpleToast(isPresented: $showAlert, options: SimpleToastOptions(
+            hideAfter: 3
+        ), onDismiss: {
+            if isSuccess { navigatoToSigninView = true }
+        }) {
+            Label(isSuccess ? "Cadastro efetuado com sucesso!" : "Ocorreu um erro ao efetuar seu cadastro. por favor, tente novamente!",
+                  systemImage: isSuccess ? "person.badge.shield.checkmark.fill" : "exclamationmark.triangle")
+            .padding()
+            .background(isSuccess ? Color.green.opacity(0.8) : Color.red.opacity(0.8))
+            .foregroundColor(Color.white)
+            .cornerRadius(16)
+            .padding()
+        }
+
     }
 }
 
@@ -122,7 +132,7 @@ struct HealthPlanItemView: View {
                 .foregroundStyle(.accent)
             
             Picker("Planos de saúde", selection: $controller) {
-               ForEach(options, id: \.self) { plan in
+                ForEach(options, id: \.self) { plan in
                     Text(plan)
                 }
             }
