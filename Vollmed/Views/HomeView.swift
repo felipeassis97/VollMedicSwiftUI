@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
-    let service = WebService()
-    let authManager = AuthManager.instance
+    
+    //MARK: Atributes
+    let viewModel = HomeViewModel(service: HomeNetworkinService(), auth: AuthService())
+
+    //MARK: States
     @State private var specialistsD: [Specialist] = []
     
     var body: some View {
@@ -41,11 +44,10 @@ struct HomeView: View {
         .onAppear {
             Task {
                 do {
-                    if let result = try await service.getAllSpecialists() {
-                        specialistsD = result
-                    }
+                    guard let response = try await viewModel.getSpecialists() else { return }
+                    specialistsD = response
                 } catch {
-                    print("Error: \(error)")
+                    print(error.localizedDescription)
                 }
             }
         }
@@ -53,16 +55,7 @@ struct HomeView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
                     Task {
-                        do {
-                            let logout = try await service.logoutPatient()
-                            if logout {
-                                authManager.removeToken()
-                                authManager.removePatientID()
-                            }
-                            
-                        } catch {
-                            print("falha no logout")
-                        }
+                         await viewModel.logout()
                     }
                 }, label: {
                     HStack {
