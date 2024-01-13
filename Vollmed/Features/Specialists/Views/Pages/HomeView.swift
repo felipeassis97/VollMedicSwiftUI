@@ -61,6 +61,7 @@ struct HomeView: View {
                         let errorType = error as? RequestError
                         errorMessage = errorType?.customMessage ?? "Ops! Ocorreu um erro"
                     }
+
                     isLoading = false
                 }
             }
@@ -83,7 +84,7 @@ struct HomeView: View {
         }
         
         if isShowingSnackBar {
-            SnackBarView(isShowing: $isShowingSnackBar, message: errorMessage)
+            SnackBarView(message: errorMessage,isSuccess: nil, isShowing: $isShowingSnackBar)
         }
     }
 }

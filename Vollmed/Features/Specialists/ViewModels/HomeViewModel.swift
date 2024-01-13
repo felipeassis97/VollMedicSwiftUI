@@ -31,7 +31,7 @@ struct HomeViewModel {
     }
     
     func logout() async {
-        let result =  await auth.logout()
+        let result =  await auth.signOut()
         switch result {
         case .success(_ ):
             authManager.removeToken()

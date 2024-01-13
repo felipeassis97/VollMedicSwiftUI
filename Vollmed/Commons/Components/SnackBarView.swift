@@ -9,27 +9,43 @@ import SwiftUI
 
 struct SnackBarView: View {
     
-    @Binding var isShowing: Bool
+    //MARK: Atributes
     let message: String
+    let isSuccess: Bool?
+    var success: Bool {
+        return isSuccess ?? false
+    }
+    
+    //MARK: States
+    @Binding var isShowing: Bool
     
     var body: some View {
         VStack {
             Spacer()
             if isShowing {
-                Text(message)
-                    .padding()
-                    .background(.red)
-                    .foregroundStyle(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 10.0))
-                    .transition(.move(edge: .bottom))
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-                            withAnimation {
-                                isShowing = false
-                            }
-
-                        }
+                HStack(spacing: 20) {
+                    if success {
+                        Image(systemName: "person.fill.checkmark.rtl")
+                            .font(.title2)
+                    } else {
+                        Image(systemName: "exclamationmark.triangle")
+                            .font(.title2)
                     }
+                    Text(message)
+                }
+                .padding()
+                .background(success ? .accent : .red)
+                .foregroundStyle(.white)
+                .clipShape(RoundedRectangle(cornerRadius: 10))
+                .transition(.move(edge: .bottom))
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                        withAnimation {
+                            isShowing = false
+                        }
+                        
+                    }
+                }
             }
             
         }
@@ -40,5 +56,5 @@ struct SnackBarView: View {
 }
 
 #Preview {
-    SnackBarView(isShowing: .constant(true), message: "Ops! Ocorreu um erro, mas já esta sendo solucionado")
+    SnackBarView(message: "Ops! Ocorreu um erro, mas já esta sendo solucionado", isSuccess: nil,  isShowing: .constant(true))
 }

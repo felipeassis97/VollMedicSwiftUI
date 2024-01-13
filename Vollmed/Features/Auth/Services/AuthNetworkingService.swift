@@ -10,13 +10,23 @@ import Foundation
 
 
 protocol AuthServiceable {
-    func logout() async -> Result<Bool?, RequestError>
+    func signOut() async -> Result<Bool?, RequestError>
+    func signIn(email: String, password: String) async  -> Result<LoginResponse?, RequestError>
+    func signUp(patient: Patient) async -> Result<Bool?, RequestError>
 }
 
 struct AuthService: AuthServiceable {
     let client: HTTPClient = HTTPClientImpl()
 
-    func logout() async -> Result<Bool?, RequestError> {
-        return await client.sendRequest(endpoint: AuthEndpoint.logout, responseModel: nil)
+    func signUp(patient: Patient) async -> Result<Bool?, RequestError> {
+        return await client.sendRequest(endpoint: AuthEndpoint.signUp(patient: patient), responseModel: nil)
+    }
+    
+    func signIn(email: String, password: String) async -> Result<LoginResponse?, RequestError> {
+        return await client.sendRequest(endpoint: AuthEndpoint.signIn(email: email, password: password), responseModel: LoginResponse.self)
+    }
+    
+    func signOut() async -> Result<Bool?, RequestError> {
+        return await client.sendRequest(endpoint: AuthEndpoint.signOut, responseModel: nil)
     }
 }

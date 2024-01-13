@@ -41,9 +41,14 @@
 		9EE179152B52DDBA00A552B1 /* SnackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179142B52DDBA00A552B1 /* SnackBarView.swift */; };
 		9EE179182B52E43600A552B1 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179172B52E43600A552B1 /* SkeletonView.swift */; };
 		9EE1791A2B52E6F000A552B1 /* RedectedAnimationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179192B52E6F000A552B1 /* RedectedAnimationModifier.swift */; };
+		9EE179322B5326AF00A552B1 /* SkeletonUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9EE179312B5326AF00A552B1 /* SkeletonUI */; };
+		9EE179342B53279600A552B1 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179332B53279600A552B1 /* AuthViewModel.swift */; };
+		9EE179362B53393800A552B1 /* CustomFormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179352B53393800A552B1 /* CustomFormFieldView.swift */; };
+		9EE179382B533A1600A552B1 /* CustomPasswordFormFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179372B533A1600A552B1 /* CustomPasswordFormFieldView.swift */; };
+		9EE1793A2B533A7300A552B1 /* PickerHealthPlanFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179392B533A7300A552B1 /* PickerHealthPlanFormView.swift */; };
 		9EEED24A2B500C0F00BFF60C /* CancelApointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED2492B500C0F00BFF60C /* CancelApointmentView.swift */; };
-		9EEED24C2B501A4C00BFF60C /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED24B2B501A4C00BFF60C /* SigninView.swift */; };
-		9EEED24E2B501DA900BFF60C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED24D2B501DA900BFF60C /* SignupView.swift */; };
+		9EEED24C2B501A4C00BFF60C /* SigninPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED24B2B501A4C00BFF60C /* SigninPage.swift */; };
+		9EEED24E2B501DA900BFF60C /* SignupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED24D2B501DA900BFF60C /* SignupPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,9 +86,13 @@
 		9EE179142B52DDBA00A552B1 /* SnackBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarView.swift; sourceTree = "<group>"; };
 		9EE179172B52E43600A552B1 /* SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
 		9EE179192B52E6F000A552B1 /* RedectedAnimationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedectedAnimationModifier.swift; sourceTree = "<group>"; };
+		9EE179332B53279600A552B1 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		9EE179352B53393800A552B1 /* CustomFormFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFormFieldView.swift; sourceTree = "<group>"; };
+		9EE179372B533A1600A552B1 /* CustomPasswordFormFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPasswordFormFieldView.swift; sourceTree = "<group>"; };
+		9EE179392B533A7300A552B1 /* PickerHealthPlanFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerHealthPlanFormView.swift; sourceTree = "<group>"; };
 		9EEED2492B500C0F00BFF60C /* CancelApointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelApointmentView.swift; sourceTree = "<group>"; };
-		9EEED24B2B501A4C00BFF60C /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
-		9EEED24D2B501DA900BFF60C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		9EEED24B2B501A4C00BFF60C /* SigninPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninPage.swift; sourceTree = "<group>"; };
+		9EEED24D2B501DA900BFF60C /* SignupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E3FAE032B5072200034AB68 /* SimpleToast in Frameworks */,
+				9EE179322B5326AF00A552B1 /* SkeletonUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +259,7 @@
 		9EE1791F2B53230B00A552B1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				9EE179332B53279600A552B1 /* AuthViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -256,8 +267,8 @@
 		9EE179202B53231C00A552B1 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				9EEED24B2B501A4C00BFF60C /* SigninView.swift */,
-				9EEED24D2B501DA900BFF60C /* SignupView.swift */,
+				9EEED24B2B501A4C00BFF60C /* SigninPage.swift */,
+				9EEED24D2B501DA900BFF60C /* SignupPage.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -265,6 +276,9 @@
 		9EE179212B53232200A552B1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9EE179352B53393800A552B1 /* CustomFormFieldView.swift */,
+				9EE179372B533A1600A552B1 /* CustomPasswordFormFieldView.swift */,
+				9EE179392B533A7300A552B1 /* PickerHealthPlanFormView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -415,6 +429,7 @@
 			name = Vollmed;
 			packageProductDependencies = (
 				9E3FAE022B5072200034AB68 /* SimpleToast */,
+				9EE179312B5326AF00A552B1 /* SkeletonUI */,
 			);
 			productName = Vollmed;
 			productReference = 48539DE92AB0F47C005BD7C9 /* Vollmed.app */;
@@ -446,6 +461,7 @@
 			mainGroup = 48539DE02AB0F47C005BD7C9;
 			packageReferences = (
 				9E3FAE012B5072200034AB68 /* XCRemoteSwiftPackageReference "SimpleToast" */,
+				9EE179302B5326AF00A552B1 /* XCRemoteSwiftPackageReference "SkeletonUI" */,
 			);
 			productRefGroup = 48539DEA2AB0F47C005BD7C9 /* Products */;
 			projectDirPath = "";
@@ -483,14 +499,18 @@
 				9E81C8C02B4EA6A40035CE89 /* ScheduleAppointment.swift in Sources */,
 				9EE178FE2B51BFAF00A552B1 /* HomeViewModel.swift in Sources */,
 				9EE179102B51D1D300A552B1 /* AuthEndpoint.swift in Sources */,
+				9EE179342B53279600A552B1 /* AuthViewModel.swift in Sources */,
 				48539DEF2AB0F47C005BD7C9 /* ContentView.swift in Sources */,
-				9EEED24E2B501DA900BFF60C /* SignupView.swift in Sources */,
+				9EEED24E2B501DA900BFF60C /* SignupPage.swift in Sources */,
 				9E81C8BE2B4EA45A0035CE89 /* String+.swift in Sources */,
+				9EE179362B53393800A552B1 /* CustomFormFieldView.swift in Sources */,
+				9EE179382B533A1600A552B1 /* CustomPasswordFormFieldView.swift in Sources */,
 				484BEF052AB0F7970033C07A /* HomeView.swift in Sources */,
 				9EE179152B52DDBA00A552B1 /* SnackBarView.swift in Sources */,
 				9EE179042B51C46800A552B1 /* Endpoint.swift in Sources */,
 				9ECBFA962B5166A200C2DBC2 /* AppKeys.swift in Sources */,
 				9EE1791A2B52E6F000A552B1 /* RedectedAnimationModifier.swift in Sources */,
+				9EE1793A2B533A7300A552B1 /* PickerHealthPlanFormView.swift in Sources */,
 				484BEEFD2AB0F5750033C07A /* Specialist.swift in Sources */,
 				9ECBFA912B5150D200C2DBC2 /* UserDefaultsHelper.swift in Sources */,
 				484BEF012AB0F6090033C07A /* ButtonView.swift in Sources */,
@@ -505,7 +525,7 @@
 				9EE1790C2B51CBE300A552B1 /* HomeEndpoint.swift in Sources */,
 				9EE179082B51C59300A552B1 /* RequestError.swift in Sources */,
 				9ECBFA992B5167C300C2DBC2 /* AuthManager.swift in Sources */,
-				9EEED24C2B501A4C00BFF60C /* SigninView.swift in Sources */,
+				9EEED24C2B501A4C00BFF60C /* SigninPage.swift in Sources */,
 				9E13DC022B4D86E800A6C324 /* ScheduleAppointmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -720,6 +740,14 @@
 				minimumVersion = 0.8.1;
 			};
 		};
+		9EE179302B5326AF00A552B1 /* XCRemoteSwiftPackageReference "SkeletonUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CSolanaM/SkeletonUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -727,6 +755,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9E3FAE012B5072200034AB68 /* XCRemoteSwiftPackageReference "SimpleToast" */;
 			productName = SimpleToast;
+		};
+		9EE179312B5326AF00A552B1 /* SkeletonUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9EE179302B5326AF00A552B1 /* XCRemoteSwiftPackageReference "SkeletonUI" */;
+			productName = SkeletonUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

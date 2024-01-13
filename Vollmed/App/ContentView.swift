@@ -17,7 +17,7 @@ struct ContentView: View {
     var body: some View {
         if authManager.token == nil {
             NavigationStack {
-                SigninView()
+                SigninPage()
             }
         } else {
             TabView {
