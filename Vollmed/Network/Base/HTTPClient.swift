@@ -31,7 +31,7 @@ struct HTTPClientImpl: HTTPClient {
         if let header = endpoint.header {
             request.allHTTPHeaderFields = header
         }
-
+        
         if let body = endpoint.body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body)
         }
@@ -52,6 +52,10 @@ struct HTTPClientImpl: HTTPClient {
                     return .failure(.decode)
                 }
                 return .success(decodedResponse)
+                
+            case 400:
+                let errorResponse = try JSONSerialization.jsonObject(with: data) as? [String: Any]
+                return .failure(.custom(errorResponse))
                 
             case 401:
                 return .failure(.unauthorized)

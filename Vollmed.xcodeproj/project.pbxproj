@@ -38,6 +38,9 @@
 		9EE1790E2B51CD6800A552B1 /* HomeNetworkinService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1790D2B51CD6800A552B1 /* HomeNetworkinService.swift */; };
 		9EE179102B51D1D300A552B1 /* AuthEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1790F2B51D1D300A552B1 /* AuthEndpoint.swift */; };
 		9EE179122B51D33E00A552B1 /* AuthNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179112B51D33E00A552B1 /* AuthNetworkingService.swift */; };
+		9EE179152B52DDBA00A552B1 /* SnackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179142B52DDBA00A552B1 /* SnackBarView.swift */; };
+		9EE179182B52E43600A552B1 /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179172B52E43600A552B1 /* SkeletonView.swift */; };
+		9EE1791A2B52E6F000A552B1 /* RedectedAnimationModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179192B52E6F000A552B1 /* RedectedAnimationModifier.swift */; };
 		9EEED24A2B500C0F00BFF60C /* CancelApointmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED2492B500C0F00BFF60C /* CancelApointmentView.swift */; };
 		9EEED24C2B501A4C00BFF60C /* SigninView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED24B2B501A4C00BFF60C /* SigninView.swift */; };
 		9EEED24E2B501DA900BFF60C /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED24D2B501DA900BFF60C /* SignupView.swift */; };
@@ -75,6 +78,9 @@
 		9EE1790D2B51CD6800A552B1 /* HomeNetworkinService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworkinService.swift; sourceTree = "<group>"; };
 		9EE1790F2B51D1D300A552B1 /* AuthEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEndpoint.swift; sourceTree = "<group>"; };
 		9EE179112B51D33E00A552B1 /* AuthNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNetworkingService.swift; sourceTree = "<group>"; };
+		9EE179142B52DDBA00A552B1 /* SnackBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarView.swift; sourceTree = "<group>"; };
+		9EE179172B52E43600A552B1 /* SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
+		9EE179192B52E6F000A552B1 /* RedectedAnimationModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedectedAnimationModifier.swift; sourceTree = "<group>"; };
 		9EEED2492B500C0F00BFF60C /* CancelApointmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelApointmentView.swift; sourceTree = "<group>"; };
 		9EEED24B2B501A4C00BFF60C /* SigninView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninView.swift; sourceTree = "<group>"; };
 		9EEED24D2B501DA900BFF60C /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
@@ -95,6 +101,8 @@
 		484BEEF82AB0F55F0033C07A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9EE179162B52E42A00A552B1 /* Skeleton */,
+				9EE179132B52DDA000A552B1 /* SnackBarView */,
 				484BEEF92AB0F5630033C07A /* Components */,
 				484BEF042AB0F7970033C07A /* HomeView.swift */,
 				9E13DC012B4D86E800A6C324 /* ScheduleAppointmentView.swift */,
@@ -185,6 +193,7 @@
 			children = (
 				9E13DC042B4D90C400A6C324 /* Date+.swift */,
 				9E81C8BD2B4EA45A0035CE89 /* String+.swift */,
+				9EE179192B52E6F000A552B1 /* RedectedAnimationModifier.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -250,6 +259,22 @@
 				9EE179112B51D33E00A552B1 /* AuthNetworkingService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		9EE179132B52DDA000A552B1 /* SnackBarView */ = {
+			isa = PBXGroup;
+			children = (
+				9EE179142B52DDBA00A552B1 /* SnackBarView.swift */,
+			);
+			path = SnackBarView;
+			sourceTree = "<group>";
+		};
+		9EE179162B52E42A00A552B1 /* Skeleton */ = {
+			isa = PBXGroup;
+			children = (
+				9EE179172B52E43600A552B1 /* SkeletonView.swift */,
+			);
+			path = Skeleton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +358,7 @@
 				9E13DC052B4D90C400A6C324 /* Date+.swift in Sources */,
 				9EE179062B51C52000A552B1 /* RequestMethod.swift in Sources */,
 				9ECBFA932B5165D900C2DBC2 /* KeychainHelper.swift in Sources */,
+				9EE179182B52E43600A552B1 /* SkeletonView.swift in Sources */,
 				9EE1790A2B51C6AC00A552B1 /* HTTPClient.swift in Sources */,
 				9E81C8C02B4EA6A40035CE89 /* ScheduleAppointment.swift in Sources */,
 				9EE178FE2B51BFAF00A552B1 /* HomeViewModel.swift in Sources */,
@@ -341,8 +367,10 @@
 				9EEED24E2B501DA900BFF60C /* SignupView.swift in Sources */,
 				9E81C8BE2B4EA45A0035CE89 /* String+.swift in Sources */,
 				484BEF052AB0F7970033C07A /* HomeView.swift in Sources */,
+				9EE179152B52DDBA00A552B1 /* SnackBarView.swift in Sources */,
 				9EE179042B51C46800A552B1 /* Endpoint.swift in Sources */,
 				9ECBFA962B5166A200C2DBC2 /* AppKeys.swift in Sources */,
+				9EE1791A2B52E6F000A552B1 /* RedectedAnimationModifier.swift in Sources */,
 				484BEEFD2AB0F5750033C07A /* Specialist.swift in Sources */,
 				9ECBFA912B5150D200C2DBC2 /* UserDefaultsHelper.swift in Sources */,
 				484BEF012AB0F6090033C07A /* ButtonView.swift in Sources */,
