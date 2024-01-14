@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct CancelApointmentView: View {
-    
+struct CancelAppointmentPage: View {
+    //MARK: Atributes
     let appointmentID: String
-    let service = WebService()
+    let appointmentsViewModel = AppointmentsViewModel(service: AppointmentService())
+
+    //MARK: States
     @State private var reasonToCancel = ""
     @State private var showAlert = false
     @State private var successCancel = false
@@ -36,11 +38,10 @@ struct CancelApointmentView: View {
             Button(action: {
                 Task {
                     do {
-                        try await service.cancelAppointment(appointmentID: appointmentID, reasonToCancel: reasonToCancel)
-                        successCancel = true
+                         let result = try await appointmentsViewModel.cancelAppointment(appointmentID: appointmentID, reasonToCancel: reasonToCancel)
+                        successCancel = result
                     }
                     catch {
-                        print("Error: \(error)")
                         successCancel = false
                     }
                     showAlert = true
@@ -54,7 +55,6 @@ struct CancelApointmentView: View {
         .navigationBarTitleDisplayMode(.inline)
         .alert(successCancel ? "Successo" : "Error", isPresented: $showAlert) {
             Button(action: {
-                
                 if successCancel {
                     navigationPop()
                 }
@@ -69,5 +69,5 @@ struct CancelApointmentView: View {
 }
 
 #Preview {
-    CancelApointmentView(appointmentID: "123")
+    CancelAppointmentPage(appointmentID: "123")
 }

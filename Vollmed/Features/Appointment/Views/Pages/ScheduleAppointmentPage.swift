@@ -8,16 +8,17 @@
 import SwiftUI
 import UIKit
 
-struct ScheduleAppointmentView: View {
+struct ScheduleAppointmentPage: View {
     
+    //MARK: Atributes
     let specialistID: String
     let isRescheduleView: Bool
     let appointmentID: String?
     
-    let service = WebService()
+    let appointmentsViewModel = AppointmentsViewModel(service: AppointmentService())
     let authManager = AuthManager.instance
 
-    
+    //MARK: States
     @State private var selectDate = Date()
     @State private var showAlert = false
     @State private var isAppointmentSchedule = false
@@ -29,19 +30,18 @@ struct ScheduleAppointmentView: View {
         self.appointmentID = appointmentID
     }
     
+    //MARK: Methods
     func scheduleAppointment() async {
+        guard let patientID = authManager.patientID else { return }
         do {
-            guard let patientID = authManager.patientID else { return }
-            if let appointment = try await service.scheduleAppointment(specialistID: specialistID, patientID: patientID, date: selectDate.toString()) {
-                print(appointment)
+            if let _ = try await appointmentsViewModel.scheduleAppointment(specialistID: specialistID, patientID: patientID, date: selectDate.toString()) {
                 isAppointmentSchedule = true
             } else {
                 isAppointmentSchedule = false
-                
             }
-        } catch {
-            isAppointmentSchedule = true
-            print("Erro ao agendar consulta \(error)")
+        }
+        catch {
+            isAppointmentSchedule = false
         }
         showAlert = true
     }
@@ -50,7 +50,8 @@ struct ScheduleAppointmentView: View {
         guard let appointmentID else { return }
         
         do {
-            if let _ =  try await service.reescheduleAppointment(appointmentID: appointmentID, newDate: selectDate.toString()) {
+            if let _ = 
+                try await appointmentsViewModel.reescheduleAppointment(appointmentID: appointmentID, newDate: selectDate.toString()) {
                 isAppointmentSchedule = true
             }
             else {
@@ -97,7 +98,6 @@ struct ScheduleAppointmentView: View {
             Button(action: {
                 if isAppointmentSchedule {
                     navigationPop()
-
                 }
                 
             }, label: {
@@ -114,5 +114,5 @@ struct ScheduleAppointmentView: View {
 }
 
 #Preview {
-    ScheduleAppointmentView(specialistID: "123")
+    ScheduleAppointmentPage(specialistID: "123")
 }

@@ -8,15 +8,15 @@
 import Foundation
 
 
-protocol HomeServiceable {
+protocol SpecialistsServiceable {
     func getAllSpecialists() async throws -> Result<[Specialist]?, RequestError>
 }
 
 
-struct HomeNetworkinService: HomeServiceable {
+struct SpecialistsNetworkinService: SpecialistsServiceable {
     let client: HTTPClient = HTTPClientImpl()
     
     func getAllSpecialists() async throws -> Result<[Specialist]?, RequestError> {
-        return await client.sendRequest(endpoint: HomeEndpoint.getAllSpecialists, responseModel: [Specialist].self)
+        return await client.sendRequest(endpoint: SpecialistsEndpoint.getAllSpecialists, responseModel: [Specialist].self)
     }
 }

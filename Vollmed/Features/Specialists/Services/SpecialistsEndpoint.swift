@@ -8,11 +8,11 @@
 import Foundation
 
 
-enum HomeEndpoint {
+enum SpecialistsEndpoint {
     case getAllSpecialists
 }
 
-extension HomeEndpoint: Endpoint {
+extension SpecialistsEndpoint: Endpoint {
     var schema: String {
         return "http"
     }

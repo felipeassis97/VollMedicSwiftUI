@@ -10,13 +10,14 @@ import UIKit
 
 struct SpecialistCardView: View {
     
+    //MARK: Atributes
     var appointment: Appointment?
     var specialist: Specialist
-    let service = WebService()
+    let imageService: DownloadImageServiciable = DownloadImageService()
     
+    //MARK: States
     @State private var profileImage: UIImage?
 
-    
     var body: some View {
         VStack(alignment: .leading) {
             HStack(spacing: 16.0) {
@@ -45,13 +46,13 @@ struct SpecialistCardView: View {
                 HStack {
                     
                     NavigationLink {
-                        ScheduleAppointmentView(specialistID: specialist.id, isRescheduleView: true, appointmentID: appointment.id)
+                        ScheduleAppointmentPage(specialistID: specialist.id, isRescheduleView: true, appointmentID: appointment.id)
                     } label: {
                         ButtonView(text: "Reagendar")
                     }
                     
                     NavigationLink {
-                        CancelApointmentView(appointmentID: appointment.id)
+                        CancelAppointmentPage(appointmentID: appointment.id)
                     } label: {
                         ButtonView(text: "Cancelar", buttonType: .cancel)
 
@@ -59,7 +60,7 @@ struct SpecialistCardView: View {
                 }
             } else {
                 NavigationLink {
-                    ScheduleAppointmentView(specialistID: specialist.id)
+                    ScheduleAppointmentPage(specialistID: specialist.id)
                 } label: {
                     ButtonView(text: "Agendar consulta")
                 }
@@ -74,7 +75,7 @@ struct SpecialistCardView: View {
         .task {
             
             do {
-                if let image = try await service.dowloadImage(from: specialist.imageUrl) {
+                if let image = try await imageService.dowloadImage(from: specialist.imageUrl) {
                     profileImage = image
                 }
             } catch {

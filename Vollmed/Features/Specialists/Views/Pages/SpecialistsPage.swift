@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct SpecialistsPage: View {
     
     //MARK: Atributes
-    let viewModel = HomeViewModel(service: HomeNetworkinService(), auth: AuthService())
+    let specialistsViewModel = SpecialistsViewModel(service: SpecialistsNetworkinService())
+    let authViewModel = AuthViewModel(auth: AuthService())
     
     //MARK: States
     @State private var specialistsD: [Specialist] = []
@@ -54,7 +55,7 @@ struct HomeView: View {
             .onAppear {
                 Task {
                     do {
-                        guard let response = try await viewModel.getSpecialists() else { return }
+                        guard let response = try await specialistsViewModel.getSpecialists() else { return }
                         specialistsD = response
                     } catch {
                         isShowingSnackBar = true
@@ -69,7 +70,7 @@ struct HomeView: View {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button(action: {
                         Task {
-                            await viewModel.logout()
+                            await authViewModel.signOut()
                         }
                     }, label: {
                         HStack {
@@ -90,5 +91,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    SpecialistsPage()
 }

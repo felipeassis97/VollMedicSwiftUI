@@ -22,7 +22,7 @@ struct ContentView: View {
         } else {
             TabView {
                 NavigationStack {
-                    HomeView()
+                    SpecialistsPage()
                 }
                 .tabItem {
                     Label(title: {
@@ -32,7 +32,7 @@ struct ContentView: View {
                     )}
                 
                 NavigationStack {
-                    MyAppointmentsView()
+                    MyAppointmentsPage()
                 }
                 .tabItem {
                     Label(title: {

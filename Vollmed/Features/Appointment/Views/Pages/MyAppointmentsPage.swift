@@ -7,25 +7,14 @@
 
 import SwiftUI
 
-struct MyAppointmentsView: View {
-    let service = WebService()
+struct MyAppointmentsPage: View {
     
+    //MARK: Atributes
+    let appointmentsViewModel = AppointmentsViewModel(service: AppointmentService())
     let authManager = AuthManager.instance
     
+    //MARK: States
     @State private var appointments: [Appointment] = []
-    
-    func getAppointmentsByUser() async {
-        do {
-            guard let patientID = authManager.patientID else { return }
-            if let schedules = try await service.getAllApointmentsFromPatient(patientID: patientID) {
-                appointments = schedules
-                print(schedules)
-            }
-        }
-        catch {
-            print("Erro ao buscar as consultas!")
-        }
-    }
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -40,13 +29,20 @@ struct MyAppointmentsView: View {
         .padding()
         .onAppear {
             Task {
-                await getAppointmentsByUser()
+                do {
+                    guard let patientID = authManager.patientID else { return }
+                    if let schedules = try await appointmentsViewModel.appointmentsByPatient(patientID: patientID) {
+                        appointments = schedules
+                    }
+                }
+                catch {
+                    print("Erro ao buscar as consultas!")
+                }
             }
         }
-        
     }
 }
 
 #Preview {
-    MyAppointmentsView()
+    MyAppointmentsPage()
 }
