@@ -73,7 +73,6 @@ struct SpecialistCardView: View {
         .background(Color(.lightBlue).opacity(0.15))
         .cornerRadius(16.0)
         .task {
-            
             do {
                 if let image = try await imageService.dowloadImage(from: specialist.imageUrl) {
                     profileImage = image
@@ -81,7 +80,6 @@ struct SpecialistCardView: View {
             } catch {
                 print("Error: \(error)")
             }
-          
         }
     }
 }

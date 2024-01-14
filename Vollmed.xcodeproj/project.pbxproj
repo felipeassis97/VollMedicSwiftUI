@@ -49,6 +49,7 @@
 		9EE1793F2B5402A100A552B1 /* AppointmentEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1793E2B5402A100A552B1 /* AppointmentEndpoint.swift */; };
 		9EE179412B5402B000A552B1 /* AppointmentNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179402B5402B000A552B1 /* AppointmentNetworkService.swift */; };
 		9EE179442B54169600A552B1 /* DownloadImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179432B54169600A552B1 /* DownloadImageService.swift */; };
+		9EE179462B541E5400A552B1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE179452B541E5400A552B1 /* CardView.swift */; };
 		9EEED24A2B500C0F00BFF60C /* CancelAppointmentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED2492B500C0F00BFF60C /* CancelAppointmentPage.swift */; };
 		9EEED24C2B501A4C00BFF60C /* SigninPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED24B2B501A4C00BFF60C /* SigninPage.swift */; };
 		9EEED24E2B501DA900BFF60C /* SignupPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEED24D2B501DA900BFF60C /* SignupPage.swift */; };
@@ -96,6 +97,7 @@
 		9EE1793E2B5402A100A552B1 /* AppointmentEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentEndpoint.swift; sourceTree = "<group>"; };
 		9EE179402B5402B000A552B1 /* AppointmentNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppointmentNetworkService.swift; sourceTree = "<group>"; };
 		9EE179432B54169600A552B1 /* DownloadImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageService.swift; sourceTree = "<group>"; };
+		9EE179452B541E5400A552B1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		9EEED2492B500C0F00BFF60C /* CancelAppointmentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelAppointmentPage.swift; sourceTree = "<group>"; };
 		9EEED24B2B501A4C00BFF60C /* SigninPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SigninPage.swift; sourceTree = "<group>"; };
 		9EEED24D2B501DA900BFF60C /* SignupPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupPage.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				484BEF042AB0F7970033C07A /* SpecialistsPage.swift */,
+				9EE179452B541E5400A552B1 /* CardView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				484BEF012AB0F6090033C07A /* ButtonView.swift in Sources */,
 				9EE1790E2B51CD6800A552B1 /* SpecialistsNetworkinService.swift in Sources */,
 				484BEF032AB0F7080033C07A /* SpecialistCardView.swift in Sources */,
+				9EE179462B541E5400A552B1 /* CardView.swift in Sources */,
 				9EE179412B5402B000A552B1 /* AppointmentNetworkService.swift in Sources */,
 				9EE179442B54169600A552B1 /* DownloadImageService.swift in Sources */,
 				9EE179122B51D33E00A552B1 /* AuthNetworkingService.swift in Sources */,

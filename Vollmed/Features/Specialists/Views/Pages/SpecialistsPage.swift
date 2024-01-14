@@ -23,7 +23,7 @@ struct SpecialistsPage: View {
         
         ZStack {
             ScrollView(showsIndicators: false) {
-                VStack {
+                VStack(alignment: .center) {
                     Image(.logo)
                         .resizable()
                         .scaledToFit()
@@ -44,7 +44,7 @@ struct SpecialistsPage: View {
                         SkeletonView()
                     } else {
                         ForEach(specialistsD) { specialist in
-                            SpecialistCardView(specialist: specialist)
+                            CardView(specialist: specialist)
                                 .padding(.bottom, 8)
                         }
                     }
