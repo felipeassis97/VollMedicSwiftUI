@@ -19,8 +19,8 @@ struct MyAppointmentsPage: View {
     var body: some View {
         ScrollView(showsIndicators: false) {
             VStack {
-                ForEach(appointments) { appointment in
-                    SpecialistCardView(appointment: appointment, specialist: appointment.specialist)
+                ForEach(appointments) { appointment in                    
+                    ChangeAppointmentCardView(appointment: appointment, specialist: appointment.specialist)
                 }
             }
         }

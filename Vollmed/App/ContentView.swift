@@ -27,6 +27,7 @@ struct ContentView: View {
                 .tabItem {
                     Label(title: {
                         Text("Home")
+                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     },
                           icon: { Image(systemName: "house") }
                     )}

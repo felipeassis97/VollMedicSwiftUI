@@ -30,8 +30,13 @@ struct SpecialistsPage: View {
                         .frame(width: 200)
                         .padding(.vertical, 32)
                     Text("Boas-vindas!")
-                        .font(.title2)
-                        .bold()
+                        .font(
+                            .customFont2(
+                                type: .inter,
+                                style: .bold,
+                                size: 20
+                            )
+                        )
                         .foregroundColor(Color(.lightBlue))
                     Text("Veja abaixo os especialistas da Vollmed disponíveis e marque já a sua consulta!")
                         .font(.title3)
@@ -62,8 +67,12 @@ struct SpecialistsPage: View {
                         let errorType = error as? RequestError
                         errorMessage = errorType?.customMessage ?? "Ops! Ocorreu um erro"
                     }
-
+                    
                     isLoading = false
+                }
+                
+                for name in UIFont.fontNames(forFamilyName: "Inter") {
+                    print(name)
                 }
             }
             .toolbar {

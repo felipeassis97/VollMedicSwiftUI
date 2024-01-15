@@ -15,6 +15,12 @@
 		48539DEF2AB0F47C005BD7C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48539DEE2AB0F47C005BD7C9 /* ContentView.swift */; };
 		48539DF12AB0F47D005BD7C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48539DF02AB0F47D005BD7C9 /* Assets.xcassets */; };
 		48539DF42AB0F47D005BD7C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48539DF32AB0F47D005BD7C9 /* Preview Assets.xcassets */; };
+		9E0D629E2B554BFD0095D31E /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E0D629A2B554BFD0095D31E /* Inter-Regular.ttf */; };
+		9E0D629F2B554BFD0095D31E /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E0D629B2B554BFD0095D31E /* Inter-SemiBold.ttf */; };
+		9E0D62A02B554BFD0095D31E /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E0D629C2B554BFD0095D31E /* Inter-Bold.ttf */; };
+		9E0D62A12B554BFD0095D31E /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9E0D629D2B554BFD0095D31E /* Inter-Medium.ttf */; };
+		9E0D62A32B554CED0095D31E /* Font+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D62A22B554CED0095D31E /* Font+.swift */; };
+		9E0D62A52B55532A0095D31E /* ChangeAppointmentCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0D62A42B55532A0095D31E /* ChangeAppointmentCardView.swift */; };
 		9E13DC022B4D86E800A6C324 /* ScheduleAppointmentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E13DC012B4D86E800A6C324 /* ScheduleAppointmentPage.swift */; };
 		9E13DC052B4D90C400A6C324 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E13DC042B4D90C400A6C324 /* Date+.swift */; };
 		9E3FAE032B5072200034AB68 /* SimpleToast in Frameworks */ = {isa = PBXBuildFile; productRef = 9E3FAE022B5072200034AB68 /* SimpleToast */; };
@@ -65,6 +71,13 @@
 		48539DEE2AB0F47C005BD7C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		48539DF02AB0F47D005BD7C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		48539DF32AB0F47D005BD7C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9E0D62952B5548CB0095D31E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9E0D629A2B554BFD0095D31E /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Regular.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Regular.ttf"; sourceTree = "<group>"; };
+		9E0D629B2B554BFD0095D31E /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-SemiBold.ttf"; path = "../../../../../Downloads/Inter/static/Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		9E0D629C2B554BFD0095D31E /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Bold.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Bold.ttf"; sourceTree = "<group>"; };
+		9E0D629D2B554BFD0095D31E /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Medium.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Medium.ttf"; sourceTree = "<group>"; };
+		9E0D62A22B554CED0095D31E /* Font+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+.swift"; sourceTree = "<group>"; };
+		9E0D62A42B55532A0095D31E /* ChangeAppointmentCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeAppointmentCardView.swift; sourceTree = "<group>"; };
 		9E13DC012B4D86E800A6C324 /* ScheduleAppointmentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAppointmentPage.swift; sourceTree = "<group>"; };
 		9E13DC042B4D90C400A6C324 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		9E81C8BD2B4EA45A0035CE89 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
@@ -129,6 +142,8 @@
 			isa = PBXGroup;
 			children = (
 				484BEF022AB0F7080033C07A /* SpecialistCardView.swift */,
+				9EE179452B541E5400A552B1 /* CardView.swift */,
+				9E0D62A42B55532A0095D31E /* ChangeAppointmentCardView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -170,6 +185,8 @@
 		48539DEB2AB0F47C005BD7C9 /* Vollmed */ = {
 			isa = PBXGroup;
 			children = (
+				9E0D62952B5548CB0095D31E /* Info.plist */,
+				9E0D628A2B5548720095D31E /* Fonts */,
 				9EE179282B5324B800A552B1 /* App */,
 				9ECBFA942B51669200C2DBC2 /* Commons */,
 				9EE1791B2B5322EC00A552B1 /* Features */,
@@ -187,12 +204,24 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9E0D628A2B5548720095D31E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9E0D629C2B554BFD0095D31E /* Inter-Bold.ttf */,
+				9E0D629D2B554BFD0095D31E /* Inter-Medium.ttf */,
+				9E0D629A2B554BFD0095D31E /* Inter-Regular.ttf */,
+				9E0D629B2B554BFD0095D31E /* Inter-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		9E13DC032B4D90B200A6C324 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				9E13DC042B4D90C400A6C324 /* Date+.swift */,
 				9E81C8BD2B4EA45A0035CE89 /* String+.swift */,
 				9EE179192B52E6F000A552B1 /* RedectedAnimationModifier.swift */,
+				9E0D62A22B554CED0095D31E /* Font+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -334,7 +363,6 @@
 			isa = PBXGroup;
 			children = (
 				484BEF042AB0F7970033C07A /* SpecialistsPage.swift */,
-				9EE179452B541E5400A552B1 /* CardView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -505,7 +533,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E0D629F2B554BFD0095D31E /* Inter-SemiBold.ttf in Resources */,
+				9E0D62A02B554BFD0095D31E /* Inter-Bold.ttf in Resources */,
+				9E0D62A12B554BFD0095D31E /* Inter-Medium.ttf in Resources */,
 				48539DF42AB0F47D005BD7C9 /* Preview Assets.xcassets in Resources */,
+				9E0D629E2B554BFD0095D31E /* Inter-Regular.ttf in Resources */,
 				48539DF12AB0F47D005BD7C9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,9 +585,11 @@
 				9E81C8C62B4EB2650035CE89 /* Patient.swift in Sources */,
 				9EE1793C2B54024A00A552B1 /* AppointmentViewModel.swift in Sources */,
 				9E81C8C22B4EAF1E0035CE89 /* MyAppointmentsPage.swift in Sources */,
+				9E0D62A32B554CED0095D31E /* Font+.swift in Sources */,
 				9ECBFA8F2B514C2D00C2DBC2 /* Login.swift in Sources */,
 				9EE1790C2B51CBE300A552B1 /* SpecialistsEndpoint.swift in Sources */,
 				9EE179082B51C59300A552B1 /* RequestError.swift in Sources */,
+				9E0D62A52B55532A0095D31E /* ChangeAppointmentCardView.swift in Sources */,
 				9ECBFA992B5167C300C2DBC2 /* AuthManager.swift in Sources */,
 				9EEED24C2B501A4C00BFF60C /* SigninPage.swift in Sources */,
 				9E13DC022B4D86E800A6C324 /* ScheduleAppointmentPage.swift in Sources */,
@@ -694,6 +728,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Vollmed/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Vollmed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -722,6 +757,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Vollmed/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Vollmed/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

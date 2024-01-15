@@ -34,16 +34,17 @@ struct CardView: View {
                                     .scaledToFill()
                                     .frame(width: 80, height: 80)
                                     .clipShape(RoundedRectangle(cornerRadius: 16))
-                                    .padding(.leading, 32)
+                                    .padding(.leading, 16)
                                     .padding(.trailing, 8)
                                 
                             }
                             VStack(alignment: .leading, spacing: 4) {
                                 Text(specialist.name)
                                     .bold()
-                                    .font(.title3)
+                                    .font(.customFont2(type: .inter, style: .bold, size: 16))
+                                    .foregroundStyle(.black)
                                 Text(specialist.specialty)
-                                    .font(.subheadline)
+                                    .font(.customFont2(type: .inter, style: .regular, size: 14))
                                     .foregroundStyle(.black.opacity(0.7))
                             }
                             Spacer()
